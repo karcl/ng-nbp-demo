@@ -22,6 +22,8 @@ module.exports = function(config) {
     files: [
       'app/components/angular/angular.js',
       'app/components/angular-mocks/angular-mocks.js',
+      'app/components/angular-bootstrap/ui-bootstrap.js',
+      'app/components/angular-animate/angular-animate.js',
 
       'app/js/*.js',
       'test/**/*.spec.js'
