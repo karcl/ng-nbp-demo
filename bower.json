@@ -1,0 +1,19 @@
+{
+  "name": "ng-nbp-demo",
+  "description": "Angular demo application to view NBP exchange rates",
+  "main": "app/index.html",
+  "authors": [
+    "Karol Chodakowski"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/components",
+    "test",
+    "tests"
+  ]
+}
