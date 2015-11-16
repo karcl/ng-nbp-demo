@@ -40,7 +40,8 @@ gulp.task('serve', function () {
 gulp.task('test', function (done) {
     var server = new karma.Server({
         configFile: __dirname + '/karma.conf.js',
-        singleRun: true
+        singleRun: true,
+        reporters: ['spec', 'coverage']
     }, done);
     server.start();
 });

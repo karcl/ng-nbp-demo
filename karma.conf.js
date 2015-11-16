@@ -6,7 +6,8 @@ module.exports = function(config) {
     plugins: [
         'karma-jasmine',
         'karma-phantomjs-launcher',
-        'karma-spec-reporter'
+        'karma-spec-reporter',
+        'karma-coverage'
     ],
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -28,7 +29,7 @@ module.exports = function(config) {
       'app/components/abdmob/x2js/xml2json.js',
       'app/components/angular-xml/angular-xml.js',
 
-      'app/js/*.js',
+      'app/js/**/*.js',
       'test/**/*.spec.js'
     ],
 
@@ -41,6 +42,12 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        'app/js/**/*.js' : ['coverage']
+    },
+
+    coverageReporter: {
+        includeAllSources: true,
+        reporters: [ { type: 'text' } ]
     },
 
 
