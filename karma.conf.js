@@ -24,6 +24,9 @@ module.exports = function(config) {
       'app/components/angular-mocks/angular-mocks.js',
       'app/components/angular-bootstrap/ui-bootstrap.js',
       'app/components/angular-animate/angular-animate.js',
+      'app/components/angular-ui-grid/ui-grid.js',
+      'app/components/abdmob/x2js/xml2json.js',
+      'app/components/angular-xml/angular-xml.js',
 
       'app/js/*.js',
       'test/**/*.spec.js'
