@@ -2,6 +2,7 @@
 <html data-ng-app="nbpApp">
     <head>
         <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>Angular NBP echange rates demo app</title>
 
         <link rel="stylesheet" type="text/css"
@@ -21,27 +22,27 @@
     </head>
     <body>
         <div class="container-fluid">
-            <div class="jumbotron">
-                <h1>Kursy walut NBP</h1>
-                <h3>
+            <div>
+                <h2>Kursy walut NBP</h2>
+                <p>
                     Przykładowa aplikacja
                     <a href="http://angularjs.org">AngularJS</a>
                     wykorzystująca
 <a href="http://www.nbp.pl/home.aspx?f=/kursy/instrukcja_pobierania_kursow_walut.html">
     publiczne API banku NBP</a>.
-                    <p>
-                    W zasadzie to "API" składa się z pliku <code>dir.txt</code> będącego
-                    spisem plików <code>xml</code> o dziwnym formacie z polskimi nazwami
-                    tagów <small>:^D</small>.
-                    </p>
-                </h3>
+                </p>
             </div>
-            <div class="row">
+            <div class="row" data-ng-controller="mainController">
                 <div class="col-md-10">
-                    <h3>Lista plików xml</h3>
-                    <ol data-ng-controller="mainController">
-                        <li data-ng-repeat="xml in xmlList">{{ ::xml }}.xml</li>
-                    </ol>
+                    <h4>
+                        Kursy kupna-sprzedaży
+                        <strong>
+                            {{ kursy.tabela_kursow.data_publikacji }}
+                        </strong>
+                    </h4>
+                    <div data-ui-grid="{ data: kursy.tabela_kursow.pozycja }"
+                         class="exchangeGrid">
+                    </div>
                 </div>
             </div>
         </div>

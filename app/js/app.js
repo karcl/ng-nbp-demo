@@ -127,7 +127,15 @@ nbpServices.factory('xmlFileService', [
             var getJSON = function (xmlFile) {
                 var deferred = $q.defer();
                 var target = NBP_URL + xmlFile;
-                $http.get(target)
+                var xmlGetRequest = {
+                    method: 'GET',
+                    url: target,
+                    headers: {
+                        'Content-Type': 'text/xml; charset=ISO-8859-2'
+                    },
+                    data: ''
+                };
+                $http(xmlGetRequest)
                     .success(function (xmlData) {
                         var jsonData = x2js.xml_str2json(xmlData);
                         deferred.resolve(jsonData);
